@@ -10,7 +10,11 @@
         "preview": "vite preview"
     },
     "dependencies": {
+        "@headlessui/react": "^1.7.7",
+        "@radix-ui/react-checkbox": "^1.0.1",
+        "class-variance-authority": "^0.4.0",
         "react": "^18.2.0",
+        "react-aria": "^3.22.0",
         "react-dom": "^18.2.0",
         "react-router-dom": "^6.6.2"
     },

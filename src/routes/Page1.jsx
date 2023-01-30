@@ -4,7 +4,7 @@ import WithWrapper from "@/components/HOC/WithWrapper";
 function Page1() {
     return (
         <>
-            <HomePage title={"Page1"} />
+            <HomePage />
         </>
     );
 }

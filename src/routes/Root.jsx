@@ -4,7 +4,7 @@ import WithWrapper from "@/components/HOC/WithWrapper";
 function Root() {
     return (
         <>
-            <HomePage title={"Home"} />
+            <HomePage />
         </>
     );
 }
