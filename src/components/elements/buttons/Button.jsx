@@ -18,6 +18,7 @@ const buttonStyles = cva("font-medium text-sm text-center inline-flex items-cent
         rounded: {
             default: "rounded-lg",
             none: "",
+            full: "rounded-full",
         },
     },
     defaultVariants: {
@@ -28,7 +29,7 @@ const buttonStyles = cva("font-medium text-sm text-center inline-flex items-cent
     },
 });
 
-const Button = ({icon = false, text, size, intent, rounded, color}) => {
+const Button = ({icon = false, label, size, intent, rounded, color}) => {
     return (
         // <button type="button" className={`${sizeClasses[size]} ${roundedClasses[rounded]} ${colorClasses[color]} ${variantClasses[variant]} font-medium text-sm text-center inline-flex items-center`}>
         <button type="button" className={buttonStyles({intent, size, color, rounded})}>
@@ -40,7 +41,7 @@ const Button = ({icon = false, text, size, intent, rounded, color}) => {
                     ></path>
                 </svg>
             ) : null}
-            {text}
+            {label}
         </button>
     );
 };

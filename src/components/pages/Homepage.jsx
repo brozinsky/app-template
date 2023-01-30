@@ -24,7 +24,7 @@ const HomePage = () => {
             <div className="w-full h-full grid grid-cols-2">
                 <div>
                     <Form />
-                    <Button text="Button" />
+                    <Button label="Button" />
                     <ButtonIcon icon={<Icon />} />
                     <Select />
                     <Toggle />
