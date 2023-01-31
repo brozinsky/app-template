@@ -4,19 +4,16 @@ import ButtonOrLink from "@/elements/buttons/ButtonOrLink";
 
 const buttonStyles = cva("font-medium text-sm text-center inline-flex items-center", {
     variants: {
-        intent: {
-            primary: "",
-        },
-        size: {
-            default: "px-5 py-2.5",
-            lg: "px-8 py-4",
-        },
-        color: {
+        variant: {
             primary: "text-white bg-primary-500 dark:bg-primary-300 hover:bg-primary-500/90 dark:hover:bg-primary-300/90",
             mono: "text-white bg-[#24292F] hover:bg-[#24292F]/90 dark:focus:ring-gray-500 dark:hover:bg-[#050708]/30",
             danger: "text-white bg-red-500 dark:bg-red-400 hover:bg-red-400/90 dark:focus:ring-red-200 dark:hover:bg-red-600",
             neon: "text-blue-800 bg-blue-100 dark:bg-blue-900 dark:text-blue-300 text-blue-400 hover:bg-blue-200 hover:text-blue-900 dark:hover:bg-blue-800 dark:hover:text-blue-300",
             outlined: "text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-600 dark:focus:ring-blue-800",
+        },
+        size: {
+            default: "px-5 py-2.5",
+            lg: "px-8 py-4",
         },
         rounded: {
             default: "rounded-lg",
@@ -35,7 +32,7 @@ const buttonStyles = cva("font-medium text-sm text-center inline-flex items-cent
 const Button = ({variant, icon = false, label, size, intent, rounded, color, ...props}) => {
     return (
         // <button type="button" className={`${sizeClasses[size]} ${roundedClasses[rounded]} ${colorClasses[color]} ${variantClasses[variant]} font-medium text-sm text-center inline-flex items-center`}>
-        <ButtonOrLink className={buttonStyles({intent, size, color, rounded})} {...props}>
+        <ButtonOrLink className={buttonStyles({variant, intent, size, color, rounded})} {...props}>
             {icon ? (
                 <svg className="w-4 h-4 mr-2 -ml-1" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
                     <path

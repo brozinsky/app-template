@@ -11,8 +11,8 @@ export default {
         icon: {
             type: "boolean",
         },
-        color: {
-            options: ["primary", "mono", "danger"],
+        variant: {
+            options: ["primary", "mono", "danger", "neon", "outlined"],
             control: "radio",
         },
         size: {
@@ -32,19 +32,7 @@ const Template = (args) => <Button {...args} />;
 export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {
-    color: "primary",
-    label: "Button",
-};
-
-export const Mono = Template.bind({});
-Mono.args = {
-    color: "mono",
-    label: "Button",
-};
-
-export const Danger = Template.bind({});
-Danger.args = {
-    color: "danger",
+    variant: "primary",
     label: "Button",
 };
 
