@@ -1,5 +1,6 @@
 import React from "react";
 import {cva} from "class-variance-authority";
+import ButtonOrLink from "@/elements/buttons/ButtonOrLink";
 
 const buttonStyles = cva("font-medium text-sm text-center inline-flex items-center", {
     variants: {
@@ -29,10 +30,10 @@ const buttonStyles = cva("font-medium text-sm text-center inline-flex items-cent
     },
 });
 
-const Button = ({icon = false, label, size, intent, rounded, color}) => {
+const Button = ({icon = false, label, size, intent, rounded, color, ...props}) => {
     return (
         // <button type="button" className={`${sizeClasses[size]} ${roundedClasses[rounded]} ${colorClasses[color]} ${variantClasses[variant]} font-medium text-sm text-center inline-flex items-center`}>
-        <button type="button" className={buttonStyles({intent, size, color, rounded})}>
+        <ButtonOrLink className={buttonStyles({intent, size, color, rounded})} {...props}>
             {icon ? (
                 <svg className="w-4 h-4 mr-2 -ml-1" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
                     <path
@@ -42,7 +43,7 @@ const Button = ({icon = false, label, size, intent, rounded, color}) => {
                 </svg>
             ) : null}
             {label}
-        </button>
+        </ButtonOrLink>
     );
 };
 
