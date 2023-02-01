@@ -6,7 +6,7 @@ import {useFocusRing} from "@react-aria/focus";
 import {mergeProps} from "@react-aria/utils";
 import classNames from "clsx";
 
-const Checkbox = (props) => {
+const Checkbox = ({animationDraw = false, animationSwipe = true, isDisabled, ...props}) => {
     let state = useToggleState(props);
     let ref = useRef(null);
     let {inputProps} = useCheckbox(props, state, ref);
@@ -14,10 +14,11 @@ const Checkbox = (props) => {
 
     const checkboxClassName = classNames(
         state.isSelected ? "bg-primary-500 group-active:bg-primary-600" : "bg-white",
+        "overflow-hidden",
         "text-white",
         "border-2",
         "rounded",
-        props.isDisabled ? "border-gray-300" : isFocusVisible || state.isSelected ? "border-primary-500 group-active:border-primary-600" : "border-gray-500 group-active:border-gray-600",
+        isDisabled ? "border-gray-300" : isFocusVisible || state.isSelected ? "border-primary-500 group-active:border-primary-600" : "border-gray-500 group-active:border-gray-600",
         "w-5",
         "h-5",
         "flex",
@@ -31,7 +32,9 @@ const Checkbox = (props) => {
         "duration-150"
     );
 
-    let labelClassName = classNames(props.isDisabled ? "text-gray-400" : "text-gray-700 group-active:text-gray-800", "select-none");
+    const svgClassName = classNames("stroke-current w-3 h-3", !state.isSelected ? "translate-y-5" : "translate-y-0", animationSwipe ? "transition ease-in-out duration-150" : "");
+
+    let labelClassName = classNames(isDisabled ? "text-gray-400" : "text-gray-700 group-active:text-gray-800", "select-none");
 
     return (
         <label className="flex items-center group">
@@ -39,13 +42,13 @@ const Checkbox = (props) => {
                 <input {...mergeProps(inputProps, focusProps)} ref={ref} />
             </VisuallyHidden>
             <div className={checkboxClassName} aria-hidden="true">
-                <svg className="stroke-current w-3 h-3" viewBox="0 0 18 18">
+                <svg className={svgClassName} viewBox="0 0 18 18">
                     <polyline
                         points="1 9 7 14 15 4"
                         fill="none"
                         strokeWidth={3}
                         strokeDasharray={22}
-                        strokeDashoffset={state.isSelected ? 44 : 66}
+                        strokeDashoffset={animationDraw ? (state.isSelected ? 44 : 66) : 0}
                         style={{
                             transition: "all 400ms",
                         }}
