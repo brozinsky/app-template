@@ -1,8 +1,8 @@
 import React from "react";
 import {cva} from "class-variance-authority";
 
-const Paper = ({className, stroke, elevation, children, ...props}) => {
-    const classes = cva([className, "p-10 rounded-md"], {
+const Paper = ({className = "p-10 flex flex-col", stroke, elevation, children, ...props}) => {
+    const classes = cva([className, ""], {
         variants: {
             elevation: {
                 0: "bg-dark-900",
@@ -17,13 +17,18 @@ const Paper = ({className, stroke, elevation, children, ...props}) => {
                 48: "bg-dark-50",
             },
             stroke: {
-                true: "border border-dark-50 ",
+                true: "border border-dark-50",
             },
             rounded: {
                 default: "rounded-lg",
                 none: "",
                 full: "rounded-full",
             },
+        },
+        defaultVariants: {
+            elevation: "1",
+            stroke: "true",
+            rounded: "default",
         },
     });
     return <div className={(className, classes({stroke, elevation}))}>{children}</div>;
