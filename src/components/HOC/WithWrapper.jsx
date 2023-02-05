@@ -1,6 +1,7 @@
 import MenuDrawer from "@/modules/navigation/MenuDrawer";
 import MenuTopApp from "@/modules/navigation/MenuTopApp";
 import {useState} from "react";
+import Container from "@/layout/Container";
 
 const WithWrapper =
     (WrappedComponent) =>
@@ -10,9 +11,9 @@ const WithWrapper =
             <>
                 <MenuDrawer isOpen={isDrawerOpen} />
                 <MenuTopApp isDrawerOpen={isDrawerOpen} toggleDrawer={setIsDrawerOpen} />
-                <div className="container flex items-center justify-center h-screen">
+                <Container variant="main" className="flex items-center justify-center h-screen">
                     <WrappedComponent {...props} />
-                </div>
+                </Container>
             </>
         );
     };
