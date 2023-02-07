@@ -4,12 +4,16 @@ import React from "react";
 
 const ButtonOrLink = ({href, ...props}) => {
     const isLink = typeof href !== "undefined";
-    const ButtonOrLink = isLink ? "a" : "button";
+    const ButtonOrLink = isLink ? "span" : "button";
 
     let content = <ButtonOrLink {...props} />;
 
     if (isLink) {
-        return <Link href={href}>{content}</Link>;
+        return (
+            <Link className="w-fit h-fit flex" to={href}>
+                {content}
+            </Link>
+        );
     }
 
     return content;
