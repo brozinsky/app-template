@@ -6,6 +6,10 @@ import Page1 from "@/routes/Page1";
 import Page2 from "@/routes/Page2";
 import Page3 from "@/routes/Page3";
 import ErrorPage from "@/routes/ErrorPage";
+import UI from "@/routes/UI";
+import Layout from "@/routes/Layout";
+import Ecommerce from "@/routes/Ecommerce";
+import Profile from "@/routes/Profile";
 
 const router = createBrowserRouter([
     {
@@ -24,6 +28,22 @@ const router = createBrowserRouter([
     {
         path: "page-3",
         element: <Page3 />,
+    },
+    {
+        path: "ui",
+        element: <UI />,
+    },
+    {
+        path: "layout",
+        element: <Layout />,
+    },
+    {
+        path: "e-commerce",
+        element: <Ecommerce />,
+    },
+    {
+        path: "profile",
+        element: <Profile />,
     },
 ]);
 
