@@ -10,12 +10,32 @@ import UI from "@/routes/UI";
 import Layout from "@/routes/Layout";
 import Ecommerce from "@/routes/Ecommerce";
 import Profile from "@/routes/Profile";
+import ButtonRoute from "@/routes//components/ButtonRoute";
+import CheckboxRoute from "@/routes//components/CheckboxRoute";
+import InputRoute from "@/routes//components/InputRoute";
+import ToggleRoute from "@/routes//components/ToggleRoute";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Root />,
         errorElement: <ErrorPage />,
+    },
+    {
+        path: "/components/button",
+        element: <ButtonRoute />,
+    },
+    {
+        path: "/components/checkbox",
+        element: <CheckboxRoute />,
+    },
+    {
+        path: "/components/input",
+        element: <InputRoute />,
+    },
+    {
+        path: "/components/toggle",
+        element: <ToggleRoute />,
     },
     {
         path: "page-1",
