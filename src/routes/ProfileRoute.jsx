@@ -1,7 +1,7 @@
 import ProfilePage from "@/pages/ProfilePage";
 import WithWrapper from "@/components/HOC/WithWrapper";
 
-function Profile() {
+function ProfileRoute() {
     return (
         <>
             <ProfilePage />
@@ -9,4 +9,4 @@ function Profile() {
     );
 }
 
-export default WithWrapper(Profile);
+export default WithWrapper(ProfileRoute);

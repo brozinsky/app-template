@@ -1,7 +1,7 @@
 import HomePage from "@/pages/HomePage";
 import WithWrapper from "@/components/HOC/WithWrapper";
 
-function Page3() {
+function Page3Route() {
     return (
         <>
             <HomePage />
@@ -9,4 +9,4 @@ function Page3() {
     );
 }
 
-export default WithWrapper(Page3);
+export default WithWrapper(Page3Route);

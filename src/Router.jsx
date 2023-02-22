@@ -1,15 +1,14 @@
 import React from "react";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 
-import Root from "@/routes/Root";
-import Page1 from "@/routes/Page1";
-import Page2 from "@/routes/Page2";
-import Page3 from "@/routes/Page3";
-import ErrorPage from "@/routes/ErrorPage";
-import UI from "@/routes/UI";
-import Layout from "@/routes/Layout";
-import Ecommerce from "@/routes/Ecommerce";
-import Profile from "@/routes/Profile";
+import RootRoute from "@/routes/RootRoute";
+import Page1Route from "@/routes/Page1Route";
+import Page2Route from "@/routes/Page2Route";
+import Page3Route from "@/routes/Page3Route";
+import ErrorRoute from "@/routes/ErrorRoute";
+import LayoutRoute from "@/routes/LayoutRoute";
+import EcommerceRoute from "@/routes/EcommerceRoute";
+import ProfileRoute from "@/routes/ProfileRoute";
 import ButtonRoute from "@/routes//components/ButtonRoute";
 import CheckboxRoute from "@/routes//components/CheckboxRoute";
 import InputRoute from "@/routes//components/InputRoute";
@@ -18,8 +17,8 @@ import ToggleRoute from "@/routes//components/ToggleRoute";
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <Root />,
-        errorElement: <ErrorPage />,
+        element: <RootRoute />,
+        errorElement: <ErrorRoute />,
     },
     {
         path: "/components/button",
@@ -39,31 +38,27 @@ const router = createBrowserRouter([
     },
     {
         path: "page-1",
-        element: <Page1 />,
+        element: <Page1Route />,
     },
     {
         path: "page-2",
-        element: <Page2 />,
+        element: <Page2Route />,
     },
     {
         path: "page-3",
-        element: <Page3 />,
-    },
-    {
-        path: "ui",
-        element: <UI />,
+        element: <Page3Route />,
     },
     {
         path: "layout",
-        element: <Layout />,
+        element: <LayoutRoute />,
     },
     {
         path: "e-commerce",
-        element: <Ecommerce />,
+        element: <EcommerceRoute />,
     },
     {
         path: "profile",
-        element: <Profile />,
+        element: <ProfileRoute />,
     },
 ]);
 

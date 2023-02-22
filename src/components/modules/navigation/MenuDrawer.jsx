@@ -15,7 +15,18 @@ import {ReactComponent as ExpandSvg} from "@/assets/menu-expand.svg";
 
 const navItems = [
     {id: 0, title: "Dashboard", url: "/", Icon: DashboardSvg},
-    {id: 1, title: "UI", url: "/ui", Icon: ComponentsSvg},
+    {
+        id: 1,
+        title: "UI",
+        url: "/ui",
+        Icon: ComponentsSvg,
+        list: [
+            {id: 10, title: "Button", url: "/components/button"},
+            {id: 11, title: "Input", url: "/components/input"},
+            {id: 12, title: "Toggle", url: "/components/toggle"},
+            {id: 13, title: "Checkbox", url: "/components/checkbox"},
+        ],
+    },
     {id: 2, title: "Layout", url: "/layout", Icon: LayoutSvg},
     {id: 3, title: "E-commerce", url: "/e-commerce", Icon: EcommerceSvg},
     {id: 4, title: "Profile", url: "/profile", Icon: UserSvg},
@@ -39,6 +50,8 @@ const navClasses = cva(["mt-20 fixed z-40 h-screen p-4 overflow-y-auto bg-white 
 
 const MenuDrawer = ({isOpen}) => {
     const [isCollapsed, setIsCollapsed] = useToggle(false);
+    const [isListVisible, setIsListVisible] = useToggle(false);
+
     return (
         <>
             <nav className={navClasses({isOpen, isCollapsed})} tabIndex="-1" aria-labelledby="drawer-navigation-label">
@@ -47,13 +60,33 @@ const MenuDrawer = ({isOpen}) => {
                 </div>
                 <div className="py-4 overflow-y-auto">
                     <ul className="space-y-2">
-                        {navItems.map(({id, url, title, Icon}) => {
+                        {navItems.map(({id, url, title, Icon, list}) => {
                             return (
                                 <li key={id}>
-                                    <Link to={url} className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
-                                        <Icon />
-                                        {!isCollapsed ? <span className="ml-3">{title}</span> : null}
-                                    </Link>
+                                    {list && list.length > 0 ? (
+                                        <>
+                                            <div onClick={setIsListVisible} className="select-none cursor-pointer flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                                                <Icon />
+                                                {!isCollapsed ? <span className="ml-3">{title}</span> : null}
+                                            </div>
+                                            {isListVisible ? (
+                                                <div>
+                                                    {list.map(({title, url}) => {
+                                                        return (
+                                                            <Link to={url} className="block cursor-pointer pl-10 dark:hover:text-primary-200">
+                                                                {title}
+                                                            </Link>
+                                                        );
+                                                    })}
+                                                </div>
+                                            ) : null}
+                                        </>
+                                    ) : (
+                                        <Link to={url} className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                                            <Icon />
+                                            {!isCollapsed ? <span className="ml-3">{title}</span> : null}
+                                        </Link>
+                                    )}
                                 </li>
                             );
                         })}

@@ -1,7 +1,7 @@
 import EcommercePage from "@/pages/EcommercePage";
 import WithWrapper from "@/components/HOC/WithWrapper";
 
-function Ecommerce() {
+function EcommerceRoute() {
     return (
         <>
             <EcommercePage />
@@ -9,4 +9,4 @@ function Ecommerce() {
     );
 }
 
-export default WithWrapper(Ecommerce);
+export default WithWrapper(EcommerceRoute);

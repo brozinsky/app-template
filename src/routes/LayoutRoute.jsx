@@ -1,7 +1,7 @@
 import LayoutPage from "@/pages/LayoutPage";
 import WithWrapper from "@/components/HOC/WithWrapper";
 
-function Layout() {
+function LayoutRoute() {
     return (
         <>
             <LayoutPage />
@@ -9,4 +9,4 @@ function Layout() {
     );
 }
 
-export default WithWrapper(Layout);
+export default WithWrapper(LayoutRoute);
