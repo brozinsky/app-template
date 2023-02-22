@@ -13,6 +13,9 @@ import ButtonRoute from "@/routes//components/ButtonRoute";
 import CheckboxRoute from "@/routes//components/CheckboxRoute";
 import InputRoute from "@/routes//components/InputRoute";
 import ToggleRoute from "@/routes//components/ToggleRoute";
+import FlexRoute from "@/routes//layout/FlexRoute";
+import GridRoute from "@/routes//layout/GridRoute";
+import TypographyRoute from "@/routes//layout/TypographyRoute";
 
 const router = createBrowserRouter([
     {
@@ -35,6 +38,18 @@ const router = createBrowserRouter([
     {
         path: "/components/toggle",
         element: <ToggleRoute />,
+    },
+    {
+        path: "/layout/flex",
+        element: <FlexRoute />,
+    },
+    {
+        path: "/layout/grid",
+        element: <GridRoute />,
+    },
+    {
+        path: "/layout/typography",
+        element: <TypographyRoute />,
     },
     {
         path: "page-1",

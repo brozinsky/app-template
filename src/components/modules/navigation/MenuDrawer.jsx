@@ -18,7 +18,6 @@ const navItems = [
     {
         id: 1,
         title: "UI",
-        url: "/ui",
         Icon: ComponentsSvg,
         list: [
             {id: 10, title: "Button", url: "/components/button"},
@@ -27,7 +26,16 @@ const navItems = [
             {id: 13, title: "Checkbox", url: "/components/checkbox"},
         ],
     },
-    {id: 2, title: "Layout", url: "/layout", Icon: LayoutSvg},
+    {
+        id: 2,
+        title: "Layout",
+        Icon: LayoutSvg,
+        list: [
+            {id: 20, title: "Typography", url: "/layout/typography"},
+            {id: 21, title: "Flex", url: "/layout/flex"},
+            {id: 22, title: "Grid", url: "/layout/grid"},
+        ],
+    },
     {id: 3, title: "E-commerce", url: "/e-commerce", Icon: EcommerceSvg},
     {id: 4, title: "Profile", url: "/profile", Icon: UserSvg},
 ];
@@ -71,9 +79,9 @@ const MenuDrawer = ({isOpen}) => {
                                             </div>
                                             {isListVisible ? (
                                                 <div>
-                                                    {list.map(({title, url}) => {
+                                                    {list.map(({id, title, url}) => {
                                                         return (
-                                                            <Link to={url} className="block cursor-pointer pl-10 dark:hover:text-primary-200">
+                                                            <Link key={id} to={url} className="block cursor-pointer pl-10 dark:hover:text-primary-200">
                                                                 {title}
                                                             </Link>
                                                         );

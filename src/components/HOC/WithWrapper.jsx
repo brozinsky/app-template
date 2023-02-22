@@ -9,7 +9,7 @@ const wrapperClasses = cva(["flex items-center justify-center h-screen transitio
     variants: {
         isDrawerOpen: {
             true: "ml-96",
-            false: "ml-0",
+            false: "ml-auto",
         },
     },
 });
@@ -23,11 +23,11 @@ const WithWrapper =
                 <MenuTopApp isDrawerOpen={isDrawerOpen} toggleDrawer={setIsDrawerOpen} />
                 <Flex direction={"row"} gap="5" alignItems="center" justifyContent={"center"}>
                     <MenuDrawer isOpen={isDrawerOpen} />
-                    <div className="mx-auto">
-                        <Container noMargin variant="main" className={wrapperClasses({isDrawerOpen})}>
-                            <WrappedComponent isDrawerOpen={isDrawerOpen} {...props} />
-                        </Container>
-                    </div>
+                    {/* <div className="mx-auto"> */}
+                    <Container noMargin variant="main" className={wrapperClasses({isDrawerOpen})}>
+                        <WrappedComponent isDrawerOpen={isDrawerOpen} {...props} />
+                    </Container>
+                    {/* </div> */}
                 </Flex>
             </>
         );
