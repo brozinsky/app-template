@@ -16,6 +16,7 @@ import ToggleRoute from "@/routes//components/ToggleRoute";
 import FlexRoute from "@/routes//layout/FlexRoute";
 import GridRoute from "@/routes//layout/GridRoute";
 import TypographyRoute from "@/routes//layout/TypographyRoute";
+import AudioRoute from "@/routes/AudioRoute";
 
 const router = createBrowserRouter([
     {
@@ -74,6 +75,10 @@ const router = createBrowserRouter([
     {
         path: "profile",
         element: <ProfileRoute />,
+    },
+    {
+        path: "audio",
+        element: <AudioRoute />,
     },
 ]);
 
