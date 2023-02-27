@@ -13,8 +13,10 @@ const Typography = ({center, variant, decoration, size, children, className = "m
                 h3: "text-4xl font-medium",
                 h4: "text-3xl font-medium",
                 h5: "text-2xl font-medium",
-                h6: "text-1xl font-medium",
-                body1: "text-base",
+                h6: "text-xl font-medium",
+                body: "text-base",
+                sm: "text-sm",
+                xs: "text-xs",
             },
             decoration: {
                 lineTop: "flex flex-col gap-2 before:h-[2px] before:w-[100px] flex before:bg-primary-500 before:rounded-full",

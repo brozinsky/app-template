@@ -17,6 +17,7 @@ import FlexRoute from "@/routes//layout/FlexRoute";
 import GridRoute from "@/routes//layout/GridRoute";
 import TypographyRoute from "@/routes//layout/TypographyRoute";
 import AudioRoute from "@/routes/AudioRoute";
+import CategoriesRoute from "@/routes/layout/CategoriesRoute";
 
 const router = createBrowserRouter([
     {
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
     {
         path: "/layout/grid",
         element: <GridRoute />,
+    },
+    {
+        path: "/layout/categories",
+        element: <CategoriesRoute />,
     },
     {
         path: "/layout/typography",

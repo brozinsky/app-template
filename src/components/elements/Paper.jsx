@@ -1,7 +1,7 @@
 import React from "react";
 import {cva} from "class-variance-authority";
 
-const Paper = ({className = "p-10 flex flex-col", stroke, elevation, children, ...props}) => {
+const Paper = ({className = "p-10 flex flex-col", stroke = false, elevation, rounded, children, ...props}) => {
     const classes = cva([className, ""], {
         variants: {
             elevation: {
@@ -31,7 +31,7 @@ const Paper = ({className = "p-10 flex flex-col", stroke, elevation, children, .
             rounded: "default",
         },
     });
-    return <div className={(className, classes({stroke, elevation}))}>{children}</div>;
+    return <div className={(className, classes({stroke, elevation, rounded}))}>{children}</div>;
 };
 
 export default Paper;

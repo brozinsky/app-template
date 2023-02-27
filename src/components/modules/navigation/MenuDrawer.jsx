@@ -12,6 +12,7 @@ import {ReactComponent as LayoutSvg} from "@/assets/layout.svg";
 import {ReactComponent as UserSvg} from "@/assets/user.svg";
 import {ReactComponent as CollapseSvg} from "@/assets/menu-collapse.svg";
 import {ReactComponent as ExpandSvg} from "@/assets/menu-expand.svg";
+import {ReactComponent as AudioSvg} from "@/assets/audio.svg";
 
 const navItems = [
     {id: 0, title: "Dashboard", url: "/", Icon: DashboardSvg},
@@ -34,10 +35,12 @@ const navItems = [
             {id: 20, title: "Typography", url: "/layout/typography"},
             {id: 21, title: "Flex", url: "/layout/flex"},
             {id: 22, title: "Grid", url: "/layout/grid"},
+            {id: 23, title: "Categories", url: "/layout/categories"},
         ],
     },
     {id: 3, title: "E-commerce", url: "/e-commerce", Icon: EcommerceSvg},
     {id: 4, title: "Profile", url: "/profile", Icon: UserSvg},
+    {id: 5, title: "Audio", url: "/audio", Icon: AudioSvg},
 ];
 
 const navClasses = cva(["mt-20 fixed z-40 h-screen p-4 overflow-y-auto bg-white w-80  left-0 top-0", "dark:bg-dark-800", "transition-transform"], {

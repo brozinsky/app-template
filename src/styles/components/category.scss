@@ -1,0 +1,67 @@
+.category {
+    overflow: hidden;
+    &:hover {
+        .category__overflow {
+            transform: translateY(0);
+        }
+        .category__button {
+            @apply flex mb-6;
+            opacity: 100%;
+            visibility: visible;
+        }
+    }
+    &__overflow {
+        @apply absolute top-0 left-0 bg-slate-900 z-10;
+        content: "";
+        width: 100%;
+        height: 100%;
+        transform: translateY(100%);
+        transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        opacity: 0.8;
+    }
+    &__button {
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+}
+
+.category-tile {
+    $this: &;
+    @apply w-fit h-fit cursor-pointer rounded-lg overflow-hidden;
+    &:hover {
+        & #{$this}__image > img {
+            transform: scale3d(1.05, 1.04, 1.05);
+            filter: brightness(1.5);
+        }
+        & #{$this}__image::before {
+            transform: translate(-50%, -75%) rotate(225deg);
+        }
+        & #{$this}__info {
+            background-color: theme("colors.dark.700");
+        }
+    }
+    &__image {
+        @apply cursor-pointer relative overflow-hidden;
+        &::before {
+            z-index: 1;
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 150%;
+            height: 150%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transform: translate(-60%, -75%) rotate(225deg);
+            transition: all 0.25s ease-in-out;
+        }
+        & img {
+            width: 100%;
+            object-fit: cover;
+            transition: all 0.25s ease-in-out;
+        }
+    }
+    &__info {
+        @apply p-6 flex flex-col space-y-1;
+        transition: all 0.25s ease-in-out;
+    }
+}
