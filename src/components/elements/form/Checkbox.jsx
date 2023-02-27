@@ -37,7 +37,7 @@ const Checkbox = ({animationDraw = false, animationSwipe = true, isDisabled, ...
     let labelClassName = classNames(isDisabled ? "text-gray-400" : "text-gray-700 group-active:text-gray-800", "select-none");
 
     return (
-        <label className="flex items-center group">
+        <label className="flex items-center group h-fit w-fit">
             <VisuallyHidden>
                 <input {...mergeProps(inputProps, focusProps)} ref={ref} />
             </VisuallyHidden>
