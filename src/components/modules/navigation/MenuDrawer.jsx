@@ -1,8 +1,8 @@
-import {Link} from "react-router-dom";
 import React from "react";
 import ButtonIcon from "@/elements/buttons/ButtonIcon";
 import {cva} from "class-variance-authority";
 import useToggle from "@/hooks/useToggle";
+import MenuDrawerItem from "@/modules/navigation/MenuDrawerItem";
 
 // import {ReactComponent as EmptySvg} from "@/assets/empty.svg";
 import {ReactComponent as DashboardSvg} from "@/assets/dashboard.svg";
@@ -25,6 +25,7 @@ const navItems = [
             {id: 11, title: "Input", url: "/components/input"},
             {id: 12, title: "Toggle", url: "/components/toggle"},
             {id: 13, title: "Checkbox", url: "/components/checkbox"},
+            {id: 14, title: "Faq", url: "/components/faq"},
         ],
     },
     {
@@ -43,7 +44,7 @@ const navItems = [
     {id: 5, title: "Audio", url: "/audio", Icon: AudioSvg},
 ];
 
-const navClasses = cva(["mt-20 fixed z-40 h-screen p-4 overflow-y-auto bg-white w-80  left-0 top-0", "dark:bg-dark-800", "transition-transform"], {
+const navClasses = cva(["mt-20 fixed z-40 h-screen overflow-visible bg-white w-80  left-0 top-0", "dark:bg-dark-800", "transition-transform"], {
     variants: {
         isOpen: {
             true: "",
@@ -61,7 +62,6 @@ const navClasses = cva(["mt-20 fixed z-40 h-screen p-4 overflow-y-auto bg-white 
 
 const MenuDrawer = ({isOpen}) => {
     const [isCollapsed, setIsCollapsed] = useToggle(false);
-    const [isListVisible, setIsListVisible] = useToggle(false);
 
     return (
         <>
@@ -72,34 +72,7 @@ const MenuDrawer = ({isOpen}) => {
                 <div className="py-4 overflow-y-auto">
                     <ul className="space-y-2">
                         {navItems.map(({id, url, title, Icon, list}) => {
-                            return (
-                                <li key={id}>
-                                    {list && list.length > 0 ? (
-                                        <>
-                                            <div onClick={setIsListVisible} className="select-none cursor-pointer flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
-                                                <Icon />
-                                                {!isCollapsed ? <span className="ml-3">{title}</span> : null}
-                                            </div>
-                                            {isListVisible ? (
-                                                <div>
-                                                    {list.map(({id, title, url}) => {
-                                                        return (
-                                                            <Link key={id} to={url} className="block cursor-pointer pl-10 dark:hover:text-primary-200">
-                                                                {title}
-                                                            </Link>
-                                                        );
-                                                    })}
-                                                </div>
-                                            ) : null}
-                                        </>
-                                    ) : (
-                                        <Link to={url} className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
-                                            <Icon />
-                                            {!isCollapsed ? <span className="ml-3">{title}</span> : null}
-                                        </Link>
-                                    )}
-                                </li>
-                            );
+                            return <MenuDrawerItem key={id} id={id} url={url} title={title} Icon={Icon} list={list} isCollapsed={isCollapsed} />;
                         })}
                     </ul>
                 </div>
