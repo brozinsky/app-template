@@ -15,6 +15,7 @@ import GridPage from "@/pages/layout/GridPage";
 import TypographyPage from "@/pages/layout/TypographyPage";
 import AudioPage from "@/pages/AudioPage";
 import CategoriesPage from "@/pages/layout/CategoriesPage";
+import FaqPage from "@/pages/components/FaqPage";
 
 const router = createBrowserRouter([
     {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
     {
         path: "/components/toggle",
         element: <TogglePage />,
+    },
+    {
+        path: "/components/faq",
+        element: <FaqPage />,
     },
     {
         path: "/layout/flex",
