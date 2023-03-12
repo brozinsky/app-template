@@ -1,3 +1,5 @@
+import WithWrapper from "@/components/HOC/WithWrapper";
+
 const FlexPage = () => {
     return (
         <>
@@ -6,4 +8,4 @@ const FlexPage = () => {
     );
 };
 
-export default FlexPage;
+export default WithWrapper(FlexPage);

@@ -1,3 +1,4 @@
+import WithWrapper from "@/components/HOC/WithWrapper";
 const ProfilePage = () => {
     return (
         <>
@@ -6,4 +7,4 @@ const ProfilePage = () => {
     );
 };
 
-export default ProfilePage;
+export default WithWrapper(ProfilePage);

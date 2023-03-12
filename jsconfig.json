@@ -4,7 +4,7 @@
     "paths": {
       "@/public/*": ["public/*"],
       "@/routes/*": ["src/routes/*"],
-      "@/pages/*": ["src/components/pages/*"],
+      "@/pages/*": ["src/pages/*"],
       "@/components/*": ["src/components/*"],
       "@/elements/*": ["src/components/elements/*"],
       "@/layout/*": ["src/components/layout/*"],

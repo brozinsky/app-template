@@ -1,3 +1,5 @@
+import WithWrapper from "@/components/HOC/WithWrapper";
+
 const LayoutPage = () => {
     return (
         <>
@@ -6,4 +8,4 @@ const LayoutPage = () => {
     );
 };
 
-export default LayoutPage;
+export default WithWrapper(LayoutPage);

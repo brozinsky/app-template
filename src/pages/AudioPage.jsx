@@ -1,3 +1,4 @@
+import WithWrapper from "@/components/HOC/WithWrapper";
 import ButtonIcon from "@/elements/buttons/ButtonIcon";
 import Toggle from "@/elements/buttons/Toggle";
 import Player from "@/elements/audio/Player";
@@ -25,4 +26,4 @@ const AudioPage = () => {
     );
 };
 
-export default AudioPage;
+export default WithWrapper(AudioPage);

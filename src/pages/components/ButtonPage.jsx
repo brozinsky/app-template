@@ -1,3 +1,5 @@
+import WithWrapper from "@/components/HOC/WithWrapper";
+
 const ButtonPage = () => {
     return (
         <>
@@ -6,4 +8,4 @@ const ButtonPage = () => {
     );
 };
 
-export default ButtonPage;
+export default WithWrapper(ButtonPage);

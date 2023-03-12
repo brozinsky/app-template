@@ -1,3 +1,5 @@
+import WithWrapper from "@/components/HOC/WithWrapper";
+
 const TypographyPage = () => {
     return (
         <>
@@ -6,4 +8,4 @@ const TypographyPage = () => {
     );
 };
 
-export default TypographyPage;
+export default WithWrapper(TypographyPage);

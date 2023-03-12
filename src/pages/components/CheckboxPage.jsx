@@ -1,3 +1,4 @@
+import WithWrapper from "@/components/HOC/WithWrapper";
 import Checkbox from "@/components/elements/form/Checkbox";
 import Slider from "@/components/elements/Slider";
 import Toggle from "@/elements/buttons/Toggle";
@@ -41,4 +42,4 @@ const CheckboxPage = () => {
     );
 };
 
-export default CheckboxPage;
+export default WithWrapper(CheckboxPage);

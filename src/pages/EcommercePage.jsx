@@ -1,3 +1,5 @@
+import WithWrapper from "@/components/HOC/WithWrapper";
+
 const EcommercePage = () => {
     return (
         <>
@@ -6,4 +8,4 @@ const EcommercePage = () => {
     );
 };
 
-export default EcommercePage;
+export default WithWrapper(EcommercePage);

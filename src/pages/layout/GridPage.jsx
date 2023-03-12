@@ -1,3 +1,5 @@
+import WithWrapper from "@/components/HOC/WithWrapper";
+
 const GridPage = () => {
     return (
         <>
@@ -6,4 +8,4 @@ const GridPage = () => {
     );
 };
 
-export default GridPage;
+export default WithWrapper(GridPage);

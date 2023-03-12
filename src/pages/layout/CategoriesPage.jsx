@@ -1,4 +1,5 @@
 import CategoryTile from "@/components/elements/CategoryTile";
+import WithWrapper from "@/components/HOC/WithWrapper";
 
 const CategoriesPage = () => {
     return (
@@ -13,4 +14,4 @@ const CategoriesPage = () => {
     );
 };
 
-export default CategoriesPage;
+export default WithWrapper(CategoriesPage);

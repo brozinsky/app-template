@@ -1,3 +1,5 @@
+import WithWrapper from "@/components/HOC/WithWrapper";
+
 const InputPage = () => {
     return (
         <>
@@ -6,4 +8,4 @@ const InputPage = () => {
     );
 };
 
-export default InputPage;
+export default WithWrapper(InputPage);

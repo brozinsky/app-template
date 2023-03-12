@@ -1,4 +1,5 @@
 import {useRouteError} from "react-router-dom";
+import WithWrapper from "@/components/HOC/WithWrapper";
 
 const ErrorPage = () => {
     const error = useRouteError();
@@ -14,4 +15,4 @@ const ErrorPage = () => {
     );
 };
 
-export default ErrorPage;
+export default WithWrapper(ErrorPage);

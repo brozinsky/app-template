@@ -1,89 +1,74 @@
 import React from "react";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 
-import RootRoute from "@/routes/RootRoute";
-import Page1Route from "@/routes/Page1Route";
-import Page2Route from "@/routes/Page2Route";
-import Page3Route from "@/routes/Page3Route";
-import ErrorRoute from "@/routes/ErrorRoute";
-import LayoutRoute from "@/routes/LayoutRoute";
-import EcommerceRoute from "@/routes/EcommerceRoute";
-import ProfileRoute from "@/routes/ProfileRoute";
-import ButtonRoute from "@/routes//components/ButtonRoute";
-import CheckboxRoute from "@/routes//components/CheckboxRoute";
-import InputRoute from "@/routes//components/InputRoute";
-import ToggleRoute from "@/routes//components/ToggleRoute";
-import FlexRoute from "@/routes//layout/FlexRoute";
-import GridRoute from "@/routes//layout/GridRoute";
-import TypographyRoute from "@/routes//layout/TypographyRoute";
-import AudioRoute from "@/routes/AudioRoute";
-import CategoriesRoute from "@/routes/layout/CategoriesRoute";
+import Homepage from "@/pages/Homepage";
+import ErrorPage from "@/pages/ErrorPage";
+import LayoutPage from "@/pages/LayoutPage";
+import EcommercePage from "@/pages/EcommercePage";
+import ProfilePage from "@/pages/ProfilePage";
+import ButtonPage from "@/pages/components/ButtonPage";
+import CheckboxPage from "@/pages/components/CheckboxPage";
+import InputPage from "@/pages/components/InputPage";
+import TogglePage from "@/pages/components/TogglePage";
+import FlexPage from "@/pages/layout/FlexPage";
+import GridPage from "@/pages/layout/GridPage";
+import TypographyPage from "@/pages/layout/TypographyPage";
+import AudioPage from "@/pages/AudioPage";
+import CategoriesPage from "@/pages/layout/CategoriesPage";
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <RootRoute />,
-        errorElement: <ErrorRoute />,
+        element: <Homepage />,
+        errorElement: <ErrorPage />,
     },
     {
         path: "/components/button",
-        element: <ButtonRoute />,
+        element: <ButtonPage />,
     },
     {
         path: "/components/checkbox",
-        element: <CheckboxRoute />,
+        element: <CheckboxPage />,
     },
     {
         path: "/components/input",
-        element: <InputRoute />,
+        element: <InputPage />,
     },
     {
         path: "/components/toggle",
-        element: <ToggleRoute />,
+        element: <TogglePage />,
     },
     {
         path: "/layout/flex",
-        element: <FlexRoute />,
+        element: <FlexPage />,
     },
     {
         path: "/layout/grid",
-        element: <GridRoute />,
+        element: <GridPage />,
     },
     {
         path: "/layout/categories",
-        element: <CategoriesRoute />,
+        element: <CategoriesPage />,
     },
     {
         path: "/layout/typography",
-        element: <TypographyRoute />,
-    },
-    {
-        path: "page-1",
-        element: <Page1Route />,
-    },
-    {
-        path: "page-2",
-        element: <Page2Route />,
-    },
-    {
-        path: "page-3",
-        element: <Page3Route />,
+        element: <TypographyPage />,
     },
     {
         path: "layout",
-        element: <LayoutRoute />,
+        element: <LayoutPage />,
     },
     {
         path: "e-commerce",
-        element: <EcommerceRoute />,
+        element: <EcommercePage />,
     },
     {
         path: "profile",
-        element: <ProfileRoute />,
+        element: <ProfilePage />,
     },
     {
         path: "audio",
-        element: <AudioRoute />,
+        element: <AudioPage />,
     },
 ]);
 

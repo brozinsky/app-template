@@ -1,3 +1,5 @@
+import WithWrapper from "@/components/HOC/WithWrapper";
+
 const TogglePage = () => {
     return (
         <>
@@ -6,4 +8,4 @@ const TogglePage = () => {
     );
 };
 
-export default TogglePage;
+export default WithWrapper(TogglePage);

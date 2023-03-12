@@ -1,9 +1,11 @@
+import WithWrapper from "@/components/HOC/WithWrapper";
 import Form from "@/modules/Form";
 import Button from "@/elements/buttons/Button";
 import ButtonIcon from "@/elements/buttons/ButtonIcon";
 // import Dropdown from "@/elements/buttons/Dropdown";
 import Select from "@/elements/buttons/Select";
 import Checkbox from "@/components/elements/form/Checkbox";
+import Slider from "@/components/elements/Slider";
 
 import Toggle from "@/elements/buttons/Toggle";
 
@@ -30,10 +32,12 @@ const HomePage = () => {
                     <Toggle />
                     <Checkbox defaultSelected>Subscribe</Checkbox>
                 </div>
-                <div className="col-start-1 col-end-3">ddd</div>
+                <div className="col-start-1 col-end-3">
+                    <Slider />
+                </div>
             </div>
         </>
     );
 };
 
-export default HomePage;
+export default WithWrapper(HomePage);
