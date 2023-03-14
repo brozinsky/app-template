@@ -28,7 +28,7 @@
 
 .category-tile {
     $this: &;
-    @apply w-fit h-fit cursor-pointer rounded-lg overflow-hidden;
+    @apply w-full h-fit cursor-pointer rounded-lg overflow-hidden border border-dark-50;
     &:hover {
         & #{$this}__image > img {
             transform: scale3d(1.05, 1.04, 1.05);
@@ -39,6 +39,9 @@
         }
         & #{$this}__info {
             background-color: theme("colors.dark.700");
+        }
+        & #{$this}__icon {
+            background-color: theme("colors.dark.900");
         }
     }
     &__image {
@@ -59,6 +62,11 @@
             object-fit: cover;
             transition: all 0.25s ease-in-out;
         }
+    }
+    &__icon {
+        @apply flex items-center justify-center;
+        height: 12rem;
+        transition: all 0.25s ease-in-out;
     }
     &__info {
         @apply p-6 flex flex-col space-y-1;

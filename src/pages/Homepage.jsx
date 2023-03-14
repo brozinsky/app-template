@@ -1,4 +1,5 @@
 import WithWrapper from "@/components/HOC/WithWrapper";
+import CategoryTile from "@/components/elements/CategoryTile";
 import Form from "@/modules/Form";
 import Button from "@/elements/buttons/Button";
 import ButtonIcon from "@/elements/buttons/ButtonIcon";
@@ -6,37 +7,105 @@ import ButtonIcon from "@/elements/buttons/ButtonIcon";
 import Select from "@/elements/buttons/Select";
 import Checkbox from "@/components/elements/form/Checkbox";
 import Slider from "@/components/elements/Slider";
-
+import Glass from "@/elements/Glass";
 import Toggle from "@/elements/buttons/Toggle";
 
-export const Icon = () => {
-    return (
-        <svg className="w-6 h-6" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
-            <path
-                fill="currentColor"
-                d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
-            ></path>
-        </svg>
-    );
-};
+import {ReactComponent as UiSvg} from "@/assets/svg/categories/ui.svg";
+import {ReactComponent as LayoutSvg} from "@/assets/svg/categories/layout.svg";
+import {ReactComponent as EcommerceSvg} from "@/assets/svg/categories/ecommerce.svg";
+import {ReactComponent as ProfileSvg} from "@/assets/svg/categories/profile.svg";
+import {ReactComponent as AudioSvg} from "@/assets/svg/categories/audio.svg";
+import Typography from "@/components/elements/Typography";
+
+const categories = [
+    {id: 111, Icon: UiSvg, title: "UI", info: "Lorem ipsum", href: "/ui"},
+    {id: 112, Icon: LayoutSvg, title: "Layout", info: "Lorem ipsum", href: "/layout"},
+    {id: 112, Icon: LayoutSvg, title: "Layout", info: "Lorem ipsum", href: "/layout"},
+    {id: 114, Icon: EcommerceSvg, title: "E-commerce", info: "Lorem ipsum", href: "/profile"},
+    {id: 115, Icon: AudioSvg, title: "Audio", info: "Lorem ipsum", href: "/audio"},
+];
 
 const HomePage = () => {
     return (
-        <>
-            <div className="w-full h-full grid grid-cols-2">
-                <div>
+        <div className="w-full max-w-5xl">
+            <Typography variant="h1" size="h3" decoration="lineBot" className={"font-medium mb-8"}>
+                Dashboard
+            </Typography>
+            <div className="space-x-4 w-full h-full flex flex-row justify-between max-w-5xl">
+                {categories.map(({id, Icon, title, info, href}) => {
+                    return <CategoryTile stroke={true} key={id} Icon={Icon} title={title} info={info} href={href} />;
+                })}
+                {/* <CategoryTile image={"https://picsum.photos/id/149/240/190?grayscale"} title={"Button"} info={"Lorem ipsum dolor sit amet"} />
+                <CategoryTile image={"https://picsum.photos/id/149/240/190?grayscale"} title={"Input"} info={"Lorem ipsum dolor sit amet"} />
+                <CategoryTile image={"https://picsum.photos/id/149/240/190?grayscale"} title={"Toggle"} info={"Lorem ipsum dolor sit amet"} />
+                <CategoryTile image={"https://picsum.photos/id/149/240/190?grayscale"} title={"Checkbox"} info={"Lorem ipsum dolor sit amet"} /> */}
+                {/* <div className="col-start-1 col-end-2 relative">
+                    <div className="bg-red-500 w-40 h-40 rounded-full absolute -left-10"></div>
+                    <div className="bg-lime-500 w-40 h-40 rounded-full absolute -left-10 -bottom-10"></div>
+                    <Glass blur={"lg"} opacity={30} elevation={1} className={"p-10 w-[500px] flex flex-col"} stroke>
+                        <img className="self-center mb-2" src={EmptyState} alt="" />
+                        <Typography variant="h3" size="h4" decoration="lineBot" center className={"font-medium mb-4"}>
+                            Lorem ipsum dolor sit.
+                        </Typography>
+                        <Typography center>
+                            Lorem ipsum dolor sit amet <CustomLink to="/">consectetur</CustomLink> adipisicing elit. Debitis doloribus aspernatur laudantium veritatis inventore ducimus cupiditate eum? Repellendus, eius. Eaque amet debitis corporis
+                            consequatur ratione tempora culpa! Accusantium, reiciendis quod.
+                        </Typography>
+                        <div className="flex space-x-4 mx-auto w-fit mt-4">
+                            <Button label="Prev" variant="outlined" />
+                            <Button label="Next" variant="primary" />
+                        </div>
+                    </Glass>
+                </div> */}
+                {/* <div className="m-4">
+                    <div className="wrapper rounded-md">
+                        <div className="border-item rounded-md"></div>
+                        <div className="rounded-md main-element bg-dark-900"></div>
+                    </div>
+                </div> */}
+                {/* <Flex className={"m-4"} direction={"row"} gap="5" alignItems="center" justifyContent={"center"}>
+                    <div className="bg-red-300 w-5 h-5" />
+                    <div className="bg-lime-300 w-5 h-5" />
+                    <div className="bg-purple-300 w-5 h-5" />
+                </Flex> */}
+                {/* <Grid className={"m-4"} cols={2} alignItems={"center"} justifyContent={"center"}>
+                    <div className="bg-red-300 w-5 h-5" />
+                    <div className="bg-lime-300 w-5 h-5" />
+                    <div className="bg-purple-300 w-5 h-5" />
+                </Grid> */}
+                {/* <div className="m-4">
+                    <div className="main_box flex flex-col p-10 rounded-md bg-dark-800 border border-dark-50">
+                        <div className="bar top"></div>
+                        <div className="bar right delay"></div>
+                        <div className="bar bottom delay"></div>
+                        <div className="bar left"></div>
+                        <img className="self-center mb-2" src={EmptyState} alt="" />
+                        <Typography variant="h3" size="h4" decoration="lineBot" center className={"font-medium mb-4"}>
+                            Lorem ipsum dolor sit.
+                        </Typography>
+                        <Typography center>
+                            Lorem ipsum dolor sit amet <CustomLink to="/">consectetur</CustomLink> adipisicing elit. Debitis doloribus aspernatur laudantium veritatis inve
+                        </Typography>
+                        <div className="flex space-x-4 mx-auto w-fit mt-4">
+                            <Button label="Prev" variant="outlined" />
+                            <Button label="Next" variant="primary" />
+                        </div>
+                    </div>
+                </div> */}
+                {/* <div>
+                    {items.map(({id, name, image, icon}) => {
+                        return <Category key={id + name} content={name} image={image} icon={icon} />;
+                    })}
                     <Form />
-                    <Button label="Button" />
-                    <ButtonIcon icon={<Icon />} />
                     <Select />
                     <Toggle />
                     <Checkbox defaultSelected>Subscribe</Checkbox>
                 </div>
                 <div className="col-start-1 col-end-3">
                     <Slider />
-                </div>
+                </div> */}
             </div>
-        </>
+        </div>
     );
 };
 

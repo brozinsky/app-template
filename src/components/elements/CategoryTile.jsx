@@ -1,12 +1,14 @@
 import Paper from "@/components/elements/Paper";
 import Typography from "@/components/elements/Typography";
+import {Link} from "react-router-dom";
 
-const CategoryTile = ({title, content, image, info}) => {
+const CategoryTile = ({title, content, image, Icon, info, href}) => {
     return (
-        <div className="category-tile">
+        <Link to={href} className="category-tile">
             <div className="w-full">
-                <div className="category-tile__image">
-                    <img width={240} height={190} src={image} alt={content} />
+                <div className={`${Icon ? "category-tile__icon" : "category-tile__image"}`}>
+                    {image ? <img width={240} height={190} src={image} alt={content} /> : null}
+                    {Icon ? <Icon /> : null}
                 </div>
                 <Paper rounded={"none"} opacity={30} elevation={1} className={"text-slate-100 category-tile__info"}>
                     <Typography variant="h3" size="h6" decoration="none" className={"font-bold"}>
@@ -19,7 +21,7 @@ const CategoryTile = ({title, content, image, info}) => {
                     ) : null}
                 </Paper>
             </div>
-        </div>
+        </Link>
     );
 };
 
