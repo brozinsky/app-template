@@ -16,6 +16,7 @@ import TypographyPage from "@/pages/layout/TypographyPage";
 import AudioPage from "@/pages/AudioPage";
 import CategoriesPage from "@/pages/layout/CategoriesPage";
 import FaqPage from "@/pages/components/FaqPage";
+import UIPage from "@/pages/UIPage";
 
 const router = createBrowserRouter([
     {
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
     {
         path: "/layout/typography",
         element: <TypographyPage />,
+    },
+    {
+        path: "/ui",
+        element: <UIPage />,
     },
     {
         path: "layout",
