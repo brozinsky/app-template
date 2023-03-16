@@ -1,6 +1,7 @@
 import WithWrapper from "@/components/HOC/WithWrapper";
 import Button from "@/elements/buttons/Button";
 import ButtonIcon from "@/elements/buttons/ButtonIcon";
+import Typography from "@/components/elements/Typography";
 
 const Icon = () => {
     return (
@@ -16,11 +17,68 @@ const Icon = () => {
 const ButtonPage = () => {
     return (
         <>
-            <Button label="Button" variant="primary" />
-            <Button label="Button" variant="shine" />
-            <ButtonIcon icon={<Icon />} />
-            <ButtonIcon size={"sm"} rounded={"lg"} color={"gray"} variant={"secondary"} icon={<Icon />} />
-            <ButtonIcon size={"sm"} color={"transparent"} variant={"secondary"} icon={<Icon />} />
+            <div className="w-full max-w-5xl">
+                <Typography variant="h1" size="h3" decoration="lineBot" className={"font-medium mb-8"}>
+                    Buttons
+                </Typography>
+                <div className="mt-10">
+                    <Typography variant="h2" size="h5" decoration="" className={"mb-4"}>
+                        Variants
+                    </Typography>
+                    <div className="flex gap-4 items-center">
+                        <Button label="Button" variant="primary" />
+                        <Button label="Button" variant="shine" />
+                        <Button label="Button" variant="mono" />
+                        <Button label="Button" variant="danger" />
+                        <Button label="Button" variant="neon" />
+                        <Button label="Button" variant="outlined" />
+                    </div>
+                </div>
+                <div className="mt-10">
+                    <Typography variant="h2" size="h5" decoration="" className={"mb-4"}>
+                        States
+                    </Typography>
+                    WIP...
+                </div>
+                <div className="mt-10">
+                    <Typography variant="h2" size="h5" decoration="" className={"mb-4"}>
+                        Sizes
+                    </Typography>
+                    <div className="flex gap-4 items-center">
+                        <Button size={"default"} label="Button" variant="primary" />
+                        <Button size={"lg"} label="Button" variant="primary" />
+                    </div>
+                </div>
+                <div className="mt-10">
+                    <Typography variant="h2" size="h5" decoration="" className={"mb-4"}>
+                        Rounded
+                    </Typography>
+                    <div className="flex gap-4 items-center">
+                        <Button rounded={"default"} label="Button" />
+                        <Button rounded={"none"} label="Button" />
+                        <Button rounded={"full"} label="Button" />
+                    </div>
+                </div>
+                <div className="mt-10">
+                    <Typography variant="h2" size="h5" decoration="" className={"mb-4"}>
+                        Button with icon
+                    </Typography>
+                    <div className="flex gap-4 items-center">
+                        <Button startIcon={<Icon />} label="Button" />
+                        <Button endIcon={<Icon />} label="Button" />
+                    </div>
+                </div>
+                <div className="mt-10">
+                    <Typography variant="h2" size="h5" decoration="" className={"mb-4"}>
+                        Icon buttons
+                    </Typography>
+                    <div className="flex gap-4 items-center">
+                        <ButtonIcon icon={<Icon />} />
+                        <ButtonIcon size={"sm"} rounded={"lg"} color={"gray"} variant={"secondary"} icon={<Icon />} />
+                        <ButtonIcon size={"sm"} color={"transparent"} variant={"secondary"} icon={<Icon />} />
+                    </div>
+                </div>
+            </div>
         </>
     );
 };
